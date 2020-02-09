@@ -21,6 +21,11 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
+	<!-- tell spring to upload image in database -->
+	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+       <beans:property name="maxUploadSize" value="40000000"></beans:property>  
+    </beans:bean>
+	
 	<context:component-scan base-package="com.stock.gestion" />
 	
 	
